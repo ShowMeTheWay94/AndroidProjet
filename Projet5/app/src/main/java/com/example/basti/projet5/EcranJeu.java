@@ -47,6 +47,9 @@ public class EcranJeu extends AppCompatActivity {
     int pointVie;
     int pointMagie;
 
+    //Déclaration de la classe
+    String classe;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         if(savedInstanceState != null){
@@ -67,6 +70,7 @@ public class EcranJeu extends AppCompatActivity {
             defense = intent.getIntExtra("defense",0);
             pointVie = intent.getIntExtra("pointVie",0);
             pointMagie = intent.getIntExtra("pointMagie",0);
+            classe = intent.getStringExtra("classe");
         }
 
         super.onCreate(savedInstanceState);
@@ -279,6 +283,7 @@ public class EcranJeu extends AppCompatActivity {
         @Override
         public void onClick(View v) {
             Intent intent = new Intent(EcranJeu.this,CaracteristiquesClasse.class);
+            intent.putExtra("classe",classe);
             startActivity(intent);
         }
     };
