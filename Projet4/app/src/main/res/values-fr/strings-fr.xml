@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--Nom de l'application-->
+    <string name="app_name">Projet4</string>
+
+    <!--Titre-->
+    <string name="titre">Labyrinthe</string>
+
+    <!--Tableau caractéristiques-->
+    <string name="force">Force : </string>
+    <string name="valeurForce">50</string>
+    <string name="defense">Défense : </string>
+    <string name="valeurDefense">30</string>
+    <string name="pv">PV : </string>
+    <string name="valeurPv">150</string>
+    <string name="pm">PM : </string>
+    <string name="valeurPm">150</string>
+
+    <!--Message pour les boutons de potion-->
+    <string name="potion">Potion</string>
+    <string name="potionForce">Potion(s) de force (reste </string>
+
+    <!--Message d'erreur-->
+    <string name="manquePotionForce">Plus de potions de force</string>
+    <string name="manquePotionRouge">Plus de potions rouge</string>
+    <string name="manquePotionBleue">Plus de potions bleue</string>
+    <string name="deplacementHaut">Impossible de se déplacer vers le haut</string>
+    <string name="deplacementDroite">Impossible de se déplacer vers la droite</string>
+    <string name="deplacementGauche">Impossible de se déplacer vers la gauche</string>
+    <string name="deplacementBas">Impossible de se déplacer vers le bas</string>
+</resources>

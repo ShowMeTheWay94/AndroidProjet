@@ -1,0 +1,33 @@
+<resources>
+    <string name="app_name">Projet2</string>
+
+    <string name="titre">selecting the class of the character</string>
+
+    <string name="checkboxChevalier">Knight</string>
+    <string name="descriptionChevalier">The knight is a formidable hand-to-hand combatant.  His armor allows him to take more shots than any other character.  Its values are honor and courage.</string>
+    <string name="forceChevalier">19</string>
+    <string name="vieChevalier">35</string>
+    <string name="defenseChevalier">18</string>
+    <string name="magieChevalier">0</string>
+
+    <string name="checkboxGuerrier">Warrior</string>
+    <string name="descriptionGuerrier">The warriors excel as solitary fighters.  The warriors have no phylosophy or common origin, but their training, theirs arms control and tenacity unite them.</string>
+    <string name="forceGuerrier">25</string>
+    <string name="vieGuerrier">30</string>
+    <string name="defenseGuerrier">15</string>
+    <string name="magieGuerrier">0</string>
+
+    <string name="checkboxMagicien">Magicians</string>
+    <string name="descriptionMagicien">Magicians are powerful characters who use magic.  They are generally master of the four elements.</string>
+    <string name="forceMagicien">8</string>
+    <string name="vieMagicien">25</string>
+    <string name="defenseMagicien">10</string>
+    <string name="magieMagicien">20</string>
+
+    <string name="force">Strength</string>
+    <string name="vie">Life point</string>
+    <string name="defense">Defense</string>
+    <string name="magie">Point of magic</string>
+
+    <string name="confirmer">confirm selection</string>
+</resources>

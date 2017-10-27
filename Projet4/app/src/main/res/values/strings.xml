@@ -1,0 +1,30 @@
+<resources>
+    <!--Nom de l'application-->
+    <string name="app_name">Projet4</string>
+
+    <!--Titre-->
+    <string name="titre">Maze</string>
+
+    <!--Tableau caractéristiques-->
+    <string name="force">Strength : </string>
+    <string name="valeurForce">50</string>
+    <string name="defense">Defence : </string>
+    <string name="valeurDefense">30</string>
+    <string name="pv">PV : </string>
+    <string name="valeurPv">150</string>
+    <string name="pm">PM : </string>
+    <string name="valeurPm">150</string>
+
+    <!--Message pour les boutons de potion-->
+    <string name="potion">Potion</string>
+    <string name="potionForce">Potion(s) of strength (remain </string>
+
+    <!--Message d'erreur-->
+    <string name="manquePotionForce">No strength potions left</string>
+    <string name="manquePotionRouge">No red potions left</string>
+    <string name="manquePotionBleue">No blue potions left</string>
+    <string name="deplacementHaut">Impossible to move up</string>
+    <string name="deplacementDroite">Impossible to move right</string>
+    <string name="deplacementGauche">Impossible to move left</string>
+    <string name="deplacementBas">Impossible to move down</string>
+</resources>

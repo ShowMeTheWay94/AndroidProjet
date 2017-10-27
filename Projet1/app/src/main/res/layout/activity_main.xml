@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.example.basti.projet1.MainActivity"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/titre"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="SELECTION DE LA CLASSE DU PERSO"
+            android:background="#CDCDC1"
+            android:textSize="25sp"
+            android:gravity="center"
+            android:layout_marginTop="20dp"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <CheckBox
+            android:id="@+id/checkboxChevalier"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Chevalier"
+            android:layout_marginTop="20dp"
+            app:layout_constraintTop_toBottomOf="@+id/titre" />
+
+        <ImageView
+            android:id="@+id/imageChevalier"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/chevalier"
+            android:layout_marginTop="20dp"
+            app:layout_constraintTop_toBottomOf="@+id/checkboxChevalier"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent" />
+
+        <TextView
+            android:id="@+id/descriptionChevalier"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Le chevalier est un redoutable combattant au corps à corps.  Son armure lui permet d'encaisser plus de coups qu'un autre personnage.  Ses valeurs sont l'honneur et le courage"
+            android:layout_marginTop="10dp"
+            app:layout_constraintTop_toBottomOf="@+id/imageChevalier"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent" />
+
+        <TableLayout
+            android:id="@+id/caracteristiqueChevalier"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            app:layout_constraintTop_toBottomOf="@+id/descriptionChevalier"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent">
+
+            <TableRow>
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Force :" android:layout_column="1" />
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="19" android:layout_marginLeft="10dp" android:layout_column="2" />
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Point de vie :" android:layout_marginLeft="20dp" android:layout_column="3" />
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="35" android:layout_marginLeft="10dp" android:layout_column="4" />
+            </TableRow>
+            <TableRow>
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Défense :" android:layout_column="1" />
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="18" android:layout_marginLeft="10dp" android:layout_column="2" />
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Point de magie :" android:layout_marginLeft="20dp" android:layout_column="3" />
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="0" android:layout_marginLeft="10dp" android:layout_column="4" />
+            </TableRow>
+
+        </TableLayout>
+
+        <CheckBox
+            android:id="@+id/checkboxGuerrier"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Guerrier"
+            android:layout_marginTop="20dp"
+            app:layout_constraintTop_toBottomOf="@+id/caracteristiqueChevalier" />
+
+        <ImageView
+            android:id="@+id/imageGuerrier"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/guerrier"
+            android:layout_marginTop="20dp"
+            app:layout_constraintTop_toBottomOf="@+id/checkboxGuerrier"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent" />
+
+        <TextView
+            android:id="@+id/descriptionGuerrier"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Les Guerriers excellent en tant que combattants solitaires.  Les Guerriers n’ont aucune philosophie ni origine commune, mais leur entraînement, leur maîtrise des armes et leur ténacité les unissent."
+            android:layout_marginTop="10dp"
+            app:layout_constraintTop_toBottomOf="@+id/imageGuerrier"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent" />
+
+        <TableLayout
+            android:id="@+id/caracteristiqueGuerrier"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            app:layout_constraintTop_toBottomOf="@+id/descriptionGuerrier"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent">
+
+            <TableRow>
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Force :" android:layout_column="1" />
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="25" android:layout_marginLeft="10dp" android:layout_column="2" />
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Point de vie :" android:layout_marginLeft="20dp" android:layout_column="3" />
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="30" android:layout_marginLeft="10dp" android:layout_column="4" />
+            </TableRow>
+            <TableRow>
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Défense :" android:layout_column="1" />
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="15" android:layout_marginLeft="10dp" android:layout_column="2" />
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Point de magie :" android:layout_marginLeft="20dp" android:layout_column="3" />
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="0" android:layout_marginLeft="10dp" android:layout_column="4" />
+            </TableRow>
+
+        </TableLayout>
+
+        <CheckBox
+            android:id="@+id/checkboxMagicien"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Magicien(ne)"
+            android:layout_marginTop="20dp"
+            app:layout_constraintTop_toBottomOf="@+id/caracteristiqueGuerrier" />
+
+        <ImageView
+            android:id="@+id/imageMagicien"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/magicienne"
+            android:layout_marginTop="20dp"
+            app:layout_constraintTop_toBottomOf="@+id/checkboxMagicien"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent" />
+
+        <TextView
+            android:id="@+id/descriptionMagicien"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Les Magiciens sont des personnages puissants qui utilisa la magie.  Ils sont généralement maître des quatres éléments."
+            android:layout_marginTop="10dp"
+            app:layout_constraintTop_toBottomOf="@+id/imageMagicien"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent" />
+
+        <TableLayout
+            android:id="@+id/caracteristiqueMagicien"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            app:layout_constraintTop_toBottomOf="@+id/descriptionMagicien"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent">
+
+            <TableRow>
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Force :" android:layout_column="1" />
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="8" android:layout_marginLeft="10dp" android:layout_column="2" />
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Point de vie :" android:layout_marginLeft="20dp" android:layout_column="3" />
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="25" android:layout_marginLeft="10dp" android:layout_column="4" />
+            </TableRow>
+            <TableRow>
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Défense :" android:layout_column="1" />
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="10" android:layout_marginLeft="10dp" android:layout_column="2" />
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Point de magie :" android:layout_marginLeft="20dp" android:layout_column="3" />
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="20" android:layout_marginLeft="10dp" android:layout_column="4" />
+            </TableRow>
+
+        </TableLayout>
+
+        <Button
+            android:id="@+id/confirmer"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Confirmer la sélection"
+            android:layout_marginTop="10dp"
+            app:layout_constraintTop_toBottomOf="@+id/caracteristiqueMagicien"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"/>
+    </android.support.constraint.ConstraintLayout>
+</ScrollView>
+

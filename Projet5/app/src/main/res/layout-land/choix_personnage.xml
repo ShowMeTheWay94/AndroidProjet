@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/titre"
+            android:text="@string/titreChoix"
+            style="@style/titre"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent"/>
+
+        <CheckBox
+            android:id="@+id/checkboxChevalier"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/checkboxChevalier"
+            android:layout_marginTop="20dp"
+            app:layout_constraintTop_toBottomOf="@+id/titre" />
+
+        <ImageView
+            android:id="@+id/imageChevalier"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/chevalier"
+            android:layout_marginTop="20dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginStart="20dp"
+            app:layout_constraintTop_toBottomOf="@+id/checkboxChevalier"
+            app:layout_constraintLeft_toLeftOf="parent"
+            tools:ignore="contentDescription" />
+
+        <TextView
+            android:id="@+id/descriptionChevalier"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@string/descriptionChevalier"
+            android:layout_marginTop="20dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginStart="10dp"
+            app:layout_constraintTop_toBottomOf="@+id/checkboxChevalier"
+            app:layout_constraintLeft_toRightOf="@+id/imageChevalier"
+            app:layout_constraintRight_toRightOf="parent"/>
+
+        <TableLayout
+            android:id="@+id/caracteristiqueChevalier"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_marginTop="20dp"
+            app:layout_constraintTop_toBottomOf="@+id/descriptionChevalier"
+            app:layout_constraintLeft_toRightOf="@+id/imageChevalier"
+            app:layout_constraintRight_toRightOf="parent">
+
+            <TableRow>
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/force" android:layout_column="1" />
+                <TextView android:id="@+id/forceChevalier" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/forceChevalier" android:layout_marginLeft="10dp" android:layout_column="2" />
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/vie" android:layout_marginLeft="20dp" android:layout_column="3" />
+                <TextView android:id="@+id/pointVieChevalier" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/vieChevalier" android:layout_marginLeft="10dp" android:layout_column="4" />
+            </TableRow>
+            <TableRow>
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/defense" android:layout_column="1" />
+                <TextView android:id="@+id/defenseChevalier" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/defenseChevalier" android:layout_marginLeft="10dp" android:layout_column="2" />
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/magie" android:layout_marginLeft="20dp" android:layout_column="3" />
+                <TextView android:id="@+id/pointMagieChevalier" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/magieChevalier" android:layout_marginLeft="10dp" android:layout_column="4" />
+            </TableRow>
+
+        </TableLayout>
+
+        <CheckBox
+            android:id="@+id/checkboxGuerrier"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/checkboxGuerrier"
+            android:layout_marginTop="20dp"
+            app:layout_constraintTop_toBottomOf="@+id/imageChevalier" />
+
+        <ImageView
+            android:id="@+id/imageGuerrier"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/guerrier"
+            android:layout_marginTop="20dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginStart="20dp"
+            app:layout_constraintTop_toBottomOf="@+id/checkboxGuerrier"
+            app:layout_constraintLeft_toLeftOf="parent"
+            tools:ignore="contentDescription" />
+
+        <TextView
+            android:id="@+id/descriptionGuerrier"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@string/descriptionGuerrier"
+            android:layout_marginTop="20dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginStart="10dp"
+            app:layout_constraintTop_toBottomOf="@+id/checkboxGuerrier"
+            app:layout_constraintLeft_toRightOf="@+id/imageGuerrier"
+            app:layout_constraintRight_toRightOf="parent" />
+
+        <TableLayout
+            android:id="@+id/caracteristiqueGuerrier"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_marginTop="20dp"
+            app:layout_constraintTop_toBottomOf="@+id/descriptionGuerrier"
+            app:layout_constraintLeft_toRightOf="@+id/imageGuerrier"
+            app:layout_constraintRight_toRightOf="parent">
+
+            <TableRow>
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/force" android:layout_column="1" />
+                <TextView android:id="@+id/forceGuerrier" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/forceGuerrier" android:layout_marginLeft="10dp" android:layout_column="2" />
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/vie" android:layout_marginLeft="20dp" android:layout_column="3" />
+                <TextView android:id="@+id/pointVieGuerrier" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/vieGuerrier" android:layout_marginLeft="10dp" android:layout_column="4" />
+            </TableRow>
+            <TableRow>
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/defense" android:layout_column="1" />
+                <TextView android:id="@+id/defenseGuerrier" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/defenseGuerrier" android:layout_marginLeft="10dp" android:layout_column="2" />
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/magie" android:layout_marginLeft="20dp" android:layout_column="3" />
+                <TextView android:id="@+id/pointMagieGuerrier" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/magieGuerrier" android:layout_marginLeft="10dp" android:layout_column="4" />
+            </TableRow>
+
+        </TableLayout>
+
+        <CheckBox
+            android:id="@+id/checkboxMagicien"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/checkboxMagicien"
+            android:layout_marginTop="20dp"
+            app:layout_constraintTop_toBottomOf="@+id/imageGuerrier" />
+
+        <ImageView
+            android:id="@+id/imageMagicien"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/magicienne"
+            android:layout_marginTop="20dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginStart="20dp"
+            app:layout_constraintTop_toBottomOf="@+id/checkboxMagicien"
+            app:layout_constraintLeft_toLeftOf="parent"
+            tools:ignore="contentDescription"/>
+
+        <TextView
+            android:id="@+id/descriptionMagicien"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@string/descriptionMagicien"
+            android:layout_marginTop="20dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginStart="10dp"
+            app:layout_constraintTop_toBottomOf="@+id/checkboxMagicien"
+            app:layout_constraintLeft_toRightOf="@+id/imageMagicien"
+            app:layout_constraintRight_toRightOf="parent" />
+
+        <TableLayout
+            android:id="@+id/caracteristiqueMagicien"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_marginTop="20dp"
+            app:layout_constraintTop_toBottomOf="@+id/descriptionMagicien"
+            app:layout_constraintLeft_toRightOf="@+id/imageMagicien"
+            app:layout_constraintRight_toRightOf="parent">
+
+            <TableRow>
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/force" android:layout_column="1" />
+                <TextView android:id="@+id/forceMagicien" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/forceMagicien" android:layout_marginLeft="10dp" android:layout_column="2" />
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/vie" android:layout_marginLeft="20dp" android:layout_column="3" />
+                <TextView android:id="@+id/pointVieMagicien" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/vieMagicien" android:layout_marginLeft="10dp" android:layout_column="4" />
+            </TableRow>
+            <TableRow>
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/defense" android:layout_column="1" />
+                <TextView android:id="@+id/defenseMagicien" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/defenseMagicien" android:layout_marginLeft="10dp" android:layout_column="2" />
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/magie" android:layout_marginLeft="20dp" android:layout_column="3" />
+                <TextView android:id="@+id/pointMagieMagicien" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/magieMagicien" android:layout_marginLeft="10dp" android:layout_column="4" />
+            </TableRow>
+
+        </TableLayout>
+
+        <Button
+            android:id="@+id/confirmer"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@string/confirmer"
+            android:layout_marginTop="10dp"
+            app:layout_constraintTop_toBottomOf="@+id/imageMagicien"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"/>
+    </android.support.constraint.ConstraintLayout>
+</ScrollView>

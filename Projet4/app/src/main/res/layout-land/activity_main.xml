@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.basti.projet4.MainActivity">
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/titre"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/titre"
+            android:textSize="20sp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginStart="20dp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TableLayout
+            android:id="@+id/labyrinthe"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginLeft="20dp"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/titre">
+        </TableLayout>
+
+        <TableLayout
+            android:id="@+id/caracteristiques"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            app:layout_constraintTop_toBottomOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintLeft_toRightOf="@+id/labyrinthe">
+            <TableRow>
+                <TextView android:text="@string/force"/>
+                <TextView android:id="@+id/valeurForce"
+                    android:text="@string/valeurForce"/>
+            </TableRow>
+            <TableRow>
+                <TextView android:text="@string/defense"/>
+                <TextView android:id="@+id/valeurDefense"
+                    android:text="@string/valeurDefense"/>
+            </TableRow>
+            <TableRow>
+                <TextView android:text="@string/pv"/>
+                <TextView android:id="@+id/valeurPv"
+                    android:text="@string/valeurPv"/>
+            </TableRow>
+            <TableRow>
+                <TextView android:text="@string/pm"/>
+                <TextView android:id="@+id/valeurPm"
+                    android:text="@string/valeurPm"/>
+            </TableRow>
+        </TableLayout>
+
+        <TableLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginLeft="10dp"
+            app:layout_constraintTop_toBottomOf="@id/caracteristiques"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintLeft_toRightOf="@+id/labyrinthe">
+            <TableRow>
+                <ImageView android:id ="@+id/haut"
+                    android:src="@drawable/haut"
+                    android:layout_column="2"/>
+            </TableRow>
+            <TableRow>
+                <ImageView android:id ="@+id/gauche"
+                    android:src="@drawable/gauche"
+                    android:layout_column="1"/>
+                <ImageView android:id ="@+id/droite"
+                    android:src="@drawable/droite"
+                    android:layout_column="3"/>
+            </TableRow>
+            <TableRow>
+                <ImageView android:id ="@+id/bas"
+                    android:src="@drawable/bas"
+                    android:layout_column="2"/>
+            </TableRow>
+        </TableLayout>
+
+        <Button
+            android:id="@+id/potion"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/potion"
+            android:layout_marginTop="30dp"
+            app:layout_constraintTop_toBottomOf="@id/caracteristiques"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toLeftOf="@+id/tableLayout" />
+
+        <TableLayout
+            android:id="@+id/boutonPotion"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/caracteristiques"
+            app:layout_constraintLeft_toLeftOf="parent">
+        </TableLayout>
+    </android.support.constraint.ConstraintLayout>
+</ScrollView>

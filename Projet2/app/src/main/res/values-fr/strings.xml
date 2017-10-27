@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Projet2</string>
+
+    <string name="titre">sélection de la classe du perso</string>
+
+    <string name="checkboxChevalier">Chevalier</string>
+    <string name="descriptionChevalier">Le chevalier est un redoutable combattant au corps à corps.  Son armure lui permet d\'encaisser plus de coups qu\'un autre personnage.  Ses valeurs sont l\'honneur et le courage.</string>
+    <string name="forceChevalier">19</string>
+    <string name="vieChevalier">35</string>
+    <string name="defenseChevalier">18</string>
+    <string name="magieChevalier">0</string>
+
+    <string name="checkboxGuerrier">Guerrier</string>
+    <string name="descriptionGuerrier">Les Guerriers excellent en tant que combattants solitaires.  Les Guerriers n’ont aucune philosophie ni origine commune, mais leur entraînement, leur maîtrise des armes et leur ténacité les unissent.</string>
+    <string name="forceGuerrier">25</string>
+    <string name="vieGuerrier">30</string>
+    <string name="defenseGuerrier">15</string>
+    <string name="magieGuerrier">0</string>
+
+    <string name="checkboxMagicien">Magicien(ne)</string>
+    <string name="descriptionMagicien">Les Magiciens sont des personnages puissants qui utilisa la magie.  Ils sont généralement maître des quatres éléments.</string>
+    <string name="forceMagicien">8</string>
+    <string name="vieMagicien">25</string>
+    <string name="defenseMagicien">10</string>
+    <string name="magieMagicien">20</string>
+
+    <string name="force">Force</string>
+    <string name="vie">Point de vie</string>
+    <string name="defense">Défense</string>
+    <string name="magie">Point de magie</string>
+
+    <string name="confirmer">confirmer la sélection</string>
+</resources>
