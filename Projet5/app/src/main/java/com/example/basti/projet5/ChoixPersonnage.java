@@ -68,23 +68,35 @@ public class ChoixPersonnage extends AppCompatActivity {
             //Récupération des informations de la classe sélectionnée
             if(chevalier.isChecked()){
                 intent.putExtra("force",Integer.parseInt(forceChevalier.getText().toString()));
+                intent.putExtra("forceBase",Integer.parseInt(forceChevalier.getText().toString()));
                 intent.putExtra("defense",Integer.parseInt(defenseChevalier.getText().toString()));
+                intent.putExtra("defenseBase",Integer.parseInt(defenseChevalier.getText().toString()));
                 intent.putExtra("pointVie",Integer.parseInt(pointVieChevalier.getText().toString()));
+                intent.putExtra("pointVieBase",Integer.parseInt(pointVieChevalier.getText().toString()));
                 intent.putExtra("pointMagie",Integer.parseInt(pointMagieChevalier.getText().toString()));
+                intent.putExtra("pointMagieBase",Integer.parseInt(pointMagieChevalier.getText().toString()));
                 intent.putExtra("classe","Chevalier");
                 startActivity(intent);
             }else if(guerrier.isChecked()){
                 intent.putExtra("force",Integer.parseInt(forceGuerrier.getText().toString()));
+                intent.putExtra("forceBase",Integer.parseInt(forceGuerrier.getText().toString()));
                 intent.putExtra("defense",Integer.parseInt(defenseGuerrier.getText().toString()));
+                intent.putExtra("defenseBase",Integer.parseInt(defenseGuerrier.getText().toString()));
                 intent.putExtra("pointVie",Integer.parseInt(pointVieGuerrier.getText().toString()));
+                intent.putExtra("pointVieBase",Integer.parseInt(pointVieGuerrier.getText().toString()));
                 intent.putExtra("pointMagie",Integer.parseInt(pointMagieGuerrier.getText().toString()));
+                intent.putExtra("pointMagieBase",Integer.parseInt(pointMagieGuerrier.getText().toString()));
                 intent.putExtra("classe","Guerrier");
                 startActivity(intent);
             }else if(magicien.isChecked()){
                 intent.putExtra("force",Integer.parseInt(forceMagicien.getText().toString()));
+                intent.putExtra("forceBase",Integer.parseInt(forceMagicien.getText().toString()));
                 intent.putExtra("defense",Integer.parseInt(defenseMagicien.getText().toString()));
+                intent.putExtra("defenseBase",Integer.parseInt(defenseMagicien.getText().toString()));
                 intent.putExtra("pointVie",Integer.parseInt(pointVieMagicien.getText().toString()));
+                intent.putExtra("pointVieBase",Integer.parseInt(pointVieMagicien.getText().toString()));
                 intent.putExtra("pointMagie",Integer.parseInt(pointMagieMagicien.getText().toString()));
+                intent.putExtra("pointMagieBase",Integer.parseInt(pointMagieMagicien.getText().toString()));
                 intent.putExtra("classe","Magicien(ne)");
                 startActivity(intent);
             }

@@ -2,9 +2,7 @@ package com.example.basti.projet5;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.os.PersistableBundle;
 import android.support.v7.app.AppCompatActivity;
-import android.view.KeyEvent;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
@@ -15,21 +13,21 @@ import android.widget.Toast;
 
 public class EcranJeu extends AppCompatActivity {
     //Déclaration du tableau à deux dimensions (labyrinthe)
-    int labyrinthe[][] = { {3,3,3,3,3,3,3,3,3,3,3,3} ,
-            {3,3,3,3,3,3,3,3,3,3,3,3} ,
-            {3,3,3,1,1,1,1,2,2,3,3,3} ,
-            {3,3,3,1,2,2,1,2,2,3,3,3} ,
-            {3,3,3,1,2,2,1,1,1,3,3,3} ,
-            {3,3,3,1,1,1,1,2,1,3,3,3} ,
-            {3,3,3,3,3,3,3,3,3,3,3,3} ,
-            {3,3,3,3,3,3,3,3,3,3,3,3}};
+    int labyrinthe[][] = { {3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3} ,
+            {3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3} ,
+            {3,3,3,5,2,1,1,1,1,1,1,5,2,2,3,3,3} ,
+            {3,3,3,1,1,1,2,1,2,5,2,1,2,2,3,3,3} ,
+            {3,3,3,1,1,2,1,1,1,2,2,1,1,1,3,3,3} ,
+            {3,3,3,1,1,2,1,1,1,1,2,1,1,1,3,3,3} ,
+            {3,3,3,1,1,2,1,1,1,1,1,1,1,1,3,3,3} ,
+            {3,3,3,1,1,2,5,1,1,2,2,1,1,1,3,3,3} ,
+            {3,3,3,1,1,2,2,1,1,1,1,1,2,5,3,3,3} ,
+            {3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3} ,
+            {3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3,3}};
 
     //Position du joueur
-    int initX = 4;
-    int initY = 6;
-
-    //Insérer la valeur du tableau dans une variable temporaire
-    int tmp = labyrinthe[initX][initY];
+    int initX = 5;
+    int initY = 9;
 
     //Déclaration des compteurs pour les potions
     int cptPotionForce = 2;
@@ -46,31 +44,57 @@ public class EcranJeu extends AppCompatActivity {
     int defense;
     int pointVie;
     int pointMagie;
+    int forceBase;
+    int defenseBase;
+    int pointVieBase;
+    int pointMagieBase;
 
     //Déclaration de la classe
     String classe;
 
+    //Déclaration du compteur de perle et du niveau du joueur
+    int nbrPerle = 0;
+    int niveau = 0;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         if(savedInstanceState != null){
-            initX = savedInstanceState.getInt("posX");
-            initY = savedInstanceState.getInt("posY");
-            cptPotionForce = savedInstanceState.getInt("cptPotionForce");
-            cptPotionRouge = savedInstanceState.getInt("cptPotionRouge");
-            cptPotionBleue = savedInstanceState.getInt("cptPotionBleue");
+            forceBase = savedInstanceState.getInt("valeurForceBase");
+            defenseBase = savedInstanceState.getInt("valeurDefenseBase");
+            pointVieBase = savedInstanceState.getInt("valeurPointVieBase");
+            pointMagieBase = savedInstanceState.getInt("valeurPointMagieBase");
             force = savedInstanceState.getInt("valeurForce");
             defense = savedInstanceState.getInt("valeurDefense");
             pointVie = savedInstanceState.getInt("valeurPointVie");
             pointMagie = savedInstanceState.getInt("valeurPointMagie");
+            classe = savedInstanceState.getString("classe");
+            cptPotionForce = savedInstanceState.getInt("cptPotionForce");
+            cptPotionRouge = savedInstanceState.getInt("cptPotionRouge");
+            cptPotionBleue = savedInstanceState.getInt("cptPotionBleue");
+            initX = savedInstanceState.getInt("posX");
+            initY = savedInstanceState.getInt("posY");
+            nbrPerle = savedInstanceState.getInt("perle");
+            niveau = savedInstanceState.getInt("niveau");
         }
         else{
             //Récupération de l'intent et des champs
             Intent intent = getIntent();
+            forceBase = intent.getIntExtra("forceBase",0);
+            defenseBase = intent.getIntExtra("defenseBase",0);
+            pointVieBase = intent.getIntExtra("pointVieBase",0);
+            pointMagieBase = intent.getIntExtra("pointMagieBase",0);
             force = intent.getIntExtra("force",0);
             defense = intent.getIntExtra("defense",0);
             pointVie = intent.getIntExtra("pointVie",0);
             pointMagie = intent.getIntExtra("pointMagie",0);
             classe = intent.getStringExtra("classe");
+            cptPotionForce = intent.getIntExtra("cptPotionForce",cptPotionForce);
+            cptPotionRouge = intent.getIntExtra("cptPotionRouge",cptPotionRouge);
+            cptPotionBleue = intent.getIntExtra("cptPotionBleue",cptPotionBleue);
+            initX = intent.getIntExtra("posX",initX);
+            initY = intent.getIntExtra("posY",initY);
+            nbrPerle = intent.getIntExtra("perle",nbrPerle);
+            niveau = intent.getIntExtra("niveau",niveau);
         }
 
         super.onCreate(savedInstanceState);
@@ -197,10 +221,15 @@ public class EcranJeu extends AppCompatActivity {
         public void onClick(View v) {
             //Swtich sur les flèches
             switch (v.getId()) {
-                case R.id.haut: if(initX > 1 && initX < labyrinthe.length-1 && labyrinthe[initX-1][initY] == 1){
-                    labyrinthe[initX][initY] = tmp;
-                    initX = initX - 1;
-                    tmp = labyrinthe[initX][initY];
+                case R.id.haut: if(labyrinthe[initX-1][initY] == 1 || labyrinthe[initX-1][initY] == 5){
+                    if(labyrinthe[initX-1][initY] == 5){
+                        nbrPerle++;
+                        if(nbrPerle%3 == 0){
+                            niveau++;
+                        }
+                    }
+                    labyrinthe[initX][initY] = 1;
+                    initX--;
                     labyrinthe[initX][initY] = 4;
                     initLabyrinthe();
                 }
@@ -208,10 +237,15 @@ public class EcranJeu extends AppCompatActivity {
                     Toast.makeText(v.getContext(),R.string.deplacementHaut,Toast.LENGTH_SHORT).show();
                 }
                     break;
-                case R.id.gauche: if(initY > 2 && initY < labyrinthe[initX].length-2 && labyrinthe[initX][initY-1] == 1){
-                    labyrinthe[initX][initY] = tmp;
-                    initY = initY - 1;
-                    tmp = labyrinthe[initX][initY];
+                case R.id.gauche: if(labyrinthe[initX][initY-1] == 1 || labyrinthe[initX][initY-1] == 5){
+                    if(labyrinthe[initX][initY-1] == 5){
+                        nbrPerle++;
+                        if(nbrPerle%3 == 0){
+                            niveau++;
+                        }
+                    }
+                    labyrinthe[initX][initY] = 1;
+                    initY--;
                     labyrinthe[initX][initY] = 4;
                     initLabyrinthe();
                 }
@@ -219,10 +253,15 @@ public class EcranJeu extends AppCompatActivity {
                     Toast.makeText(v.getContext(),R.string.deplacementGauche,Toast.LENGTH_SHORT).show();
                 }
                     break;
-                case R.id.droite: if(initY > 2 && initY < labyrinthe[initX].length-2 && labyrinthe[initX][initY+1] == 1){
-                    labyrinthe[initX][initY] = tmp;
-                    initY = initY + 1;
-                    tmp = labyrinthe[initX][initY];
+                case R.id.droite: if(labyrinthe[initX][initY+1] == 1 || labyrinthe[initX][initY+1] == 5){
+                    if(labyrinthe[initX][initY+1] == 5){
+                        nbrPerle++;
+                        if(nbrPerle%3 == 0){
+                            niveau++;
+                        }
+                    }
+                    labyrinthe[initX][initY] = 1;
+                    initY++;
                     labyrinthe[initX][initY] = 4;
                     initLabyrinthe();
                 }
@@ -230,10 +269,15 @@ public class EcranJeu extends AppCompatActivity {
                     Toast.makeText(v.getContext(),R.string.deplacementDroite,Toast.LENGTH_SHORT).show();
                 }
                     break;
-                case R.id.bas: if(initX > 1 && initX < labyrinthe.length-1 && labyrinthe[initX+1][initY] == 1){
-                    labyrinthe[initX][initY] = tmp;
-                    initX = initX + 1;
-                    tmp = labyrinthe[initX][initY];
+                case R.id.bas: if(labyrinthe[initX+1][initY] == 1 || labyrinthe[initX+1][initY] == 5){
+                    if(labyrinthe[initX+1][initY] == 5){
+                        nbrPerle++;
+                        if(nbrPerle%3 == 0){
+                            niveau++;
+                        }
+                    }
+                    labyrinthe[initX][initY] = 1;
+                    initX++;
                     labyrinthe[initX][initY] = 4;
                     initLabyrinthe();
                 }
@@ -273,17 +317,37 @@ public class EcranJeu extends AppCompatActivity {
                     case 4:
                         image.setImageResource(R.drawable.link_bas01);
                         image.setOnClickListener(caracteristiques);
+                        break;
+                    case 5:
+                        image.setImageResource(R.drawable.perle);
+                        break;
                 }
                 row.addView(image);
             }
         }
     }
 
+    //Listener pour afficher les caractéristiques du joueur quand on clique dessus
     private View.OnClickListener caracteristiques = new View.OnClickListener() {
         @Override
         public void onClick(View v) {
             Intent intent = new Intent(EcranJeu.this,CaracteristiquesClasse.class);
+            intent.putExtra("forceBase",forceBase);
+            intent.putExtra("defenseBase",defenseBase);
+            intent.putExtra("pointVieBase",pointVieBase);
+            intent.putExtra("pointMagieBase",pointMagieBase);
             intent.putExtra("classe",classe);
+            intent.putExtra("potionForce",cptPotionForce);
+            intent.putExtra("potionRouge",cptPotionRouge);
+            intent.putExtra("potionBleue",cptPotionBleue);
+            intent.putExtra("force",force);
+            intent.putExtra("defense",defense);
+            intent.putExtra("pointVie",pointVie);
+            intent.putExtra("pointMagie",pointMagie);
+            intent.putExtra("posX",initX);
+            intent.putExtra("posY",initY);
+            intent.putExtra("perle",nbrPerle);
+            intent.putExtra("niveau",niveau);
             startActivity(intent);
         }
     };
@@ -291,14 +355,21 @@ public class EcranJeu extends AppCompatActivity {
     //Sauvegarde des données
     @Override
     public void onSaveInstanceState(Bundle outState) {
-        outState.putInt("posX",initX);
-        outState.putInt("posY",initY);
-        outState.putInt("cptPotionForce",cptPotionForce);
-        outState.putInt("cptPotionRouge",cptPotionRouge);
-        outState.putInt("cptPotionBleue",cptPotionBleue);
+        outState.putInt("valeurForceBase",forceBase);
+        outState.putInt("valeurDefenseBase",defenseBase);
+        outState.putInt("valeurPointVieBase",pointVieBase);
+        outState.putInt("valeurPointMagieBase",pointMagieBase);
         outState.putInt("valeurForce",force);
         outState.putInt("valeurDefense",defense);
         outState.putInt("valeurPointVie",pointVie);
         outState.putInt("valeurPointMagie",pointMagie);
+        outState.putString("classe",classe);
+        outState.putInt("cptPotionForce",cptPotionForce);
+        outState.putInt("cptPotionRouge",cptPotionRouge);
+        outState.putInt("cptPotionBleue",cptPotionBleue);
+        outState.putInt("posX",initX);
+        outState.putInt("posY",initY);
+        outState.putInt("perle",nbrPerle);
+        outState.putInt("niveau",niveau);
     }
 }

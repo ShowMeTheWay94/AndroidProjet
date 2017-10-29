@@ -29,8 +29,8 @@
     <string name="defenseMagicien">10</string>
     <string name="magieMagicien">20</string>
 
-    <string name="vie">Life point</string>
-    <string name="magie">Point of magic</string>
+    <string name="vie">Life point : </string>
+    <string name="magie">Point of magic : </string>
 
     <string name="confirmer">confirm selection</string>
 
@@ -44,9 +44,15 @@
     <string name="pv">PV : </string>
     <string name="pm">PM : </string>
 
-    <!-- Message pour les boutons de potion -->
+    <!--Bouton potion-->
     <string name="potion">Potion</string>
-    <string name="potionForce">Potion(s) of strength (remain </string>
+
+    <!--Page des caractéristiques-->
+    <!--Bouton retour-->
+    <string name="retour">Return</string>
+
+    <!--Bouton pour ajouter aux caractéristiques-->
+    <string name="ajouter">+</string>
 
     <!-- Message d'erreur -->
     <string name="selectionClasse">"Please select a class"</string>
@@ -57,4 +63,5 @@
     <string name="deplacementDroite">Impossible to move right</string>
     <string name="deplacementGauche">Impossible to move left</string>
     <string name="deplacementBas">Impossible to move down</string>
+    <string name="manqueNiveau">No more points to award</string>
 </resources>
